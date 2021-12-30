@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Terra.Net.GrpcClient.ServiceClients
+namespace Terra.Net.Grpc.ServiceClients
 {
    
     public class TerraBlocksServiceClient : Cosmos.Base.Tendermint.V1Beta1.Service.ServiceClient

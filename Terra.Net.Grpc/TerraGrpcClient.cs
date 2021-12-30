@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terra.Net.GrpcClient.ServiceClients;
+using Terra.Net.Grpc.ServiceClients;
 
-namespace Terra.Net.GrpcClient
+namespace Terra.Net.Grpc
 {
     public class TerraGrpcClient
     {

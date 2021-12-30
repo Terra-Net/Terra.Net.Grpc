@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>0.0.1-pre</Version>
+    <Company>Terra.Net</Company>
+    <Description>client for gRPC Terra blockchain node interface</Description>
+    <PackageProjectUrl>https://nuget.org/Terra.Net.Grpc</PackageProjectUrl>
+    <PackageIcon>terra-logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Terra-Net/Terra.Net.Grpc</RepositoryUrl>
   </PropertyGroup>
 	<ItemGroup>
 		<Protobuf Include="Protos\confio\proofs.proto" GrpcServices="None" />
@@ -149,5 +156,12 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="icon\terra-logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>

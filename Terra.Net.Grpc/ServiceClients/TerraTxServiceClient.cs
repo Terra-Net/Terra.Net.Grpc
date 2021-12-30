@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Terra.Net.GrpcClient.ServiceClients
+namespace Terra.Net.Grpc.ServiceClients
 {
     public partial class TerraTxServiceClient : Cosmos.Tx.V1Beta1.Service.ServiceClient
     {       

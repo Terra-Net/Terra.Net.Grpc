@@ -1,6 +1,6 @@
 ﻿using Grpc.Net.Client;
 
-namespace Terra.Net.GrpcClient
+namespace Terra.Net.Grpc
 {
 
     public class TerraGrpcClientOptions
