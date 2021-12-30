@@ -1,0 +1,153 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<Protobuf Include="Protos\confio\proofs.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\auth\v1beta1\auth.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\auth\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\auth\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\authz\v1beta1\authz.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\authz\v1beta1\event.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\authz\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\authz\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\authz\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\bank\v1beta1\authz.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\bank\v1beta1\bank.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\bank\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\bank\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\bank\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\abci\v1beta1\abci.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\kv\v1beta1\kv.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\query\v1beta1\pagination.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\reflection\v1beta1\reflection.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\reflection\v2alpha1\reflection.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\snapshots\v1beta1\snapshot.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\store\v1beta1\commit_info.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\store\v1beta1\listening.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\store\v1beta1\snapshot.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\base\tendermint\v1beta1\query.proto" GrpcServices="Client" />
+		<Protobuf Include="Protos\cosmos\base\v1beta1\coin.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\capability\v1beta1\capability.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\capability\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crisis\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crisis\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crypto\ed25519\keys.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crypto\multisig\keys.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crypto\multisig\v1beta1\multisig.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crypto\secp256k1\keys.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\crypto\secp256r1\keys.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\distribution\v1beta1\distribution.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\distribution\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\distribution\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\distribution\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\evidence\v1beta1\evidence.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\evidence\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\evidence\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\evidence\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\feegrant\v1beta1\feegrant.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\feegrant\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\feegrant\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\feegrant\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\genutil\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\gov\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\gov\v1beta1\gov.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\gov\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\gov\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\mint\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\mint\v1beta1\mint.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\mint\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\params\v1beta1\params.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\params\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\slashing\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\slashing\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\slashing\v1beta1\slashing.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\slashing\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\staking\v1beta1\authz.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\staking\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\staking\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\staking\v1beta1\staking.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\staking\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\tx\signing\v1beta1\signing.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\tx\v1beta1\service.proto" GrpcServices="Client" />
+		<Protobuf Include="Protos\cosmos\tx\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\upgrade\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\upgrade\v1beta1\upgrade.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos\vesting\v1beta1\vesting.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\cosmos_proto\cosmos.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\gogoproto\gogo.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\api\annotations.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\api\http.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\api\httpbody.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\protobuf\any.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\protobuf\descriptor.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\protobuf\duration.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\google\protobuf\timestamp.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\applications\transfer\v1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\applications\transfer\v1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\applications\transfer\v1\transfer.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\applications\transfer\v1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\channel\v1\channel.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\channel\v1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\channel\v1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\channel\v1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\client\v1\client.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\client\v1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\client\v1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\client\v1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\commitment\v1\commitment.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\connection\v1\connection.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\connection\v1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\connection\v1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\connection\v1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\core\types\v1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\lightclients\localhost\v1\localhost.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\lightclients\solomachine\v1\solomachine.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\lightclients\solomachine\v2\solomachine.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\ibc\lightclients\tendermint\v1\tendermint.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\abci\types.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\crypto\keys.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\crypto\proof.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\libs\bits\types.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\p2p\types.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\types\block.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\types\evidence.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\types\params.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\types\types.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\types\validator.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\tendermint\version\types.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\market\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\market\v1beta1\market.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\market\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\market\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\oracle\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\oracle\v1beta1\oracle.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\oracle\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\oracle\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\treasury\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\treasury\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\treasury\v1beta1\treasury.proto" GrpcServices="None" />
+		<!--<Protobuf Include="Protos\terra\tx\v1beta1\service.proto" GrpcServices="None" />-->
+		<Protobuf Include="Protos\terra\vesting\v1beta1\vesting.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\wasm\v1beta1\genesis.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\wasm\v1beta1\query.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\wasm\v1beta1\tx.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\terra\wasm\v1beta1\wasm.proto" GrpcServices="None" />
+
+		<!--<Protobuf Include="Protos\terra.proto" GrpcServices="Client" />-->
+
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.41.0" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.41.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.42.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
