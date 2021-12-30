@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grpc.Net.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,13 @@ namespace Terra.Net.GrpcClient
     {
         public TerraGrpcClient(TerraGrpcClientOptions terraGrpcClientOptions)
         {
-            Blocks = new TerraBlocksServiceClient(terraGrpcClientOptions);
+            Blocks = new(terraGrpcClientOptions);
+            Tx = new(terraGrpcClientOptions);
+        }
+        public TerraGrpcClient(GrpcChannel grpcChannel)
+        {
+            Blocks = new(grpcChannel);
+            Tx = new(grpcChannel);
         }
         public TerraBlocksServiceClient Blocks { get; }
         public TerraTxServiceClient Tx { get; }
