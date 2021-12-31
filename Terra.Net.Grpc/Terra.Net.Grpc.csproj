@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.1-pre</Version>
+    <Version>0.0.2-pre</Version>
     <Company>Terra.Net</Company>
     <Description>client for gRPC Terra blockchain node interface</Description>
     <PackageProjectUrl>https://nuget.org/Terra.Net.Grpc</PackageProjectUrl>
@@ -101,7 +101,7 @@
 		<Protobuf Include="Protos\google\api\annotations.proto" GrpcServices="None" />
 		<Protobuf Include="Protos\google\api\http.proto" GrpcServices="None" />
 		<Protobuf Include="Protos\google\api\httpbody.proto" GrpcServices="None" />
-		<Protobuf Include="Protos\google\protobuf\any.proto" GrpcServices="None" />
+		<!--<Protobuf Include="Protos\google\protobuf\any.proto" GrpcServices="None" />-->
 		<Protobuf Include="Protos\google\protobuf\descriptor.proto" GrpcServices="None" />
 		<Protobuf Include="Protos\google\protobuf\duration.proto" GrpcServices="None" />
 		<Protobuf Include="Protos\google\protobuf\timestamp.proto" GrpcServices="None" />
