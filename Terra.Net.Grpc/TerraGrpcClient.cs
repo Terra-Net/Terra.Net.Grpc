@@ -8,16 +8,8 @@ using Terra.Net.Grpc.ServiceClients;
 
 namespace Terra.Net.Grpc
 {
-    /*           
-                Cosmos.distribution.v1beta1.query
-                Cosmos.distribution.v1beta1.tx
-                Cosmos.evidence.v1beta1.query
-                Cosmos.evidence.v1beta1.tx
-                Cosmos.feegrant.v1beta1.query
-                Cosmos.feegrant.v1beta1.tx
-                Cosmos.gov.v1beta1.query
-                Cosmos.gov.v1beta1.tx
-                Cosmos.mint.v1beta1.query
+    /*                        
+                
                 Cosmos.params.v1beta1.query
                 Cosmos.slashing.v1beta1.query
                 Cosmos.slashing.v1beta1.tx
@@ -37,7 +29,7 @@ namespace Terra.Net.Grpc
                 terra.treasury.v1beta1.query
                 terra.wasm.v1beta1.query
                 terra.wasm.v1beta1.tx*/
-    public class TerraGrpcClient
+    public partial class TerraGrpcClient
     {
         public TerraGrpcClient(TerraGrpcClientOptions terraGrpcClientOptions)
         {
@@ -48,6 +40,15 @@ namespace Terra.Net.Grpc
             AuthZMessage = new(terraGrpcClientOptions);
             BankQuery = new(terraGrpcClientOptions);
             BankMessage = new(terraGrpcClientOptions);
+            DistributionQuery = new(terraGrpcClientOptions);
+            EvidenceQuery = new(terraGrpcClientOptions);
+            EvidenceMsg = new(terraGrpcClientOptions);
+            FeegrantQuery = new(terraGrpcClientOptions);
+            FeegrantMsg = new(terraGrpcClientOptions);
+            GovMsg = new(terraGrpcClientOptions);
+            GovQuery = new(terraGrpcClientOptions);
+            MintQuery = new(terraGrpcClientOptions);
+            ParamsQuery = new(terraGrpcClientOptions);
         }
         public TerraGrpcClient(GrpcChannel channel)
         {
@@ -58,16 +59,31 @@ namespace Terra.Net.Grpc
             AuthZMessage = new(channel);
             BankQuery = new(channel);
             BankMessage = new(channel);
+            DistributionQuery = new(channel);
+            EvidenceQuery = new(channel);
+            EvidenceMsg = new(channel);
+            FeegrantQuery = new(channel);
+            FeegrantMsg = new(channel);
+            GovMsg = new(channel);
+            GovQuery = new(channel);
+            MintQuery = new(channel);
+            ParamsQuery = new(channel);
         }
-        public readonly BlocksClient BlocksQuery;
-        public readonly TxClient TxQuery;
-        public readonly AuthClient AuthQuery;
-        public readonly AuthZClient AuthZQuery;
-        public readonly AuthZTxClient AuthZMessage;
-        public readonly BankClient BankQuery;
-        public readonly BankMessageService BankMessage;
-
-
-
+        public readonly BlocksQueryClient BlocksQuery;
+        public readonly TxQueryClient TxQuery;
+        public readonly AuthQueryClient AuthQuery;
+        public readonly AuthZQueryClient AuthZQuery;
+        public readonly AuthZMsgClient AuthZMessage;
+        public readonly BankQueryClient BankQuery;
+        public readonly BankMsgClient BankMessage;
+        public readonly DistributionQueryClient DistributionQuery;
+        public readonly EvidenceQueryClient EvidenceQuery;
+        public readonly EvidenceMsgClient EvidenceMsg;
+        public readonly FeegrantQueryClient FeegrantQuery;
+        public readonly FeegrantMsgClient FeegrantMsg;
+        public readonly GovMsgClient GovMsg;
+        public readonly GovQueryClient GovQuery;
+        public readonly MintQueryClient MintQuery;
+        public readonly ParamsQueryClient ParamsQuery;
     }
 }

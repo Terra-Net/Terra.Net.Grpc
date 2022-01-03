@@ -3,7 +3,7 @@
 namespace Terra.Net.Grpc
 {
 
-    public class TerraGrpcClientOptions
+    public partial class TerraGrpcClientOptions
     {
         public readonly string BaseAddress;
         public readonly GrpcChannelOptions GrpcChannelOptions;
