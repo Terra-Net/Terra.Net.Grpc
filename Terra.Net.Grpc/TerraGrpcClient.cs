@@ -27,14 +27,13 @@ namespace Terra.Net.Grpc
                 terra.oracle.v1beta1.query
                 terra.oracle.v1beta1.tx
                 terra.treasury.v1beta1.query
-                terra.wasm.v1beta1.query
-                terra.wasm.v1beta1.tx*/
+                */
     public partial class TerraGrpcClient
     {
         public TerraGrpcClient(TerraGrpcClientOptions terraGrpcClientOptions)
         {
             BlocksQuery = new(terraGrpcClientOptions);
-            TxQuery = new(terraGrpcClientOptions);
+            Tx = new(terraGrpcClientOptions);
             AuthQuery = new(terraGrpcClientOptions);
             AuthZQuery = new(terraGrpcClientOptions);
             AuthZMessage = new(terraGrpcClientOptions);
@@ -48,12 +47,12 @@ namespace Terra.Net.Grpc
             GovMsg = new(terraGrpcClientOptions);
             GovQuery = new(terraGrpcClientOptions);
             MintQuery = new(terraGrpcClientOptions);
-            ParamsQuery = new(terraGrpcClientOptions);
+            ParamsQuery = new(terraGrpcClientOptions);            
         }
         public TerraGrpcClient(GrpcChannel channel)
         {
             BlocksQuery = new(channel);
-            TxQuery = new(channel);
+            Tx = new(channel);
             AuthQuery = new(channel);
             AuthZQuery = new(channel);
             AuthZMessage = new(channel);
@@ -70,7 +69,7 @@ namespace Terra.Net.Grpc
             ParamsQuery = new(channel);
         }
         public readonly BlocksQueryClient BlocksQuery;
-        public readonly TxQueryClient TxQuery;
+        public readonly TxQueryClient Tx;
         public readonly AuthQueryClient AuthQuery;
         public readonly AuthZQueryClient AuthZQuery;
         public readonly AuthZMsgClient AuthZMessage;
