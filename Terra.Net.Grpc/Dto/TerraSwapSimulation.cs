@@ -16,8 +16,6 @@ namespace Terra.Net.Grpc.Dto
     }
     public partial class TerraSwapSimulation
     {
-
-
         [JsonProperty("simulation")]
         public Simulation Simulation { get; set; }
         public static TerraSwapSimulation FromNativeToken(string denom, ulong amount)
@@ -29,7 +27,6 @@ namespace Terra.Net.Grpc.Dto
                     OfferAsset = new OfferAsset() { Amount = amount, Info = new Info() { NativeToken = new NativeToken() { Denom = denom } } }
                 }
             };
-
             return s;
         }
         public static TerraSwapSimulation FromToken(string tokecnContractAddress, ulong amount)

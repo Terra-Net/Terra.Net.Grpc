@@ -109,5 +109,8 @@ namespace Terra.Net.Grpc
             var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = poolContractAddress, QueryMsg = ByteString.CopyFromUtf8(q) });
             return JsonConvert.DeserializeObject<SwapSimulationResult>(query.QueryResult.ToStringUtf8());
         }
+
+        
+
     }
 }

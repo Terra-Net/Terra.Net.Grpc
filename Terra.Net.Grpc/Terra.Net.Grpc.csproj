@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.3</Version>
+    <Version>0.0.4-pre</Version>
     <Company>Terra.Net</Company>
     <Description>client for gRPC Terra blockchain node interface</Description>
     <PackageProjectUrl>https://nuget.org/Terra.Net.Grpc</PackageProjectUrl>
