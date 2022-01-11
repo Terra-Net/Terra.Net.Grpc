@@ -1,19 +1,20 @@
-﻿using Grpc.Net.Client;
+﻿using Google.Protobuf;
+using Grpc.Net.Client;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terra.Net.Grpc.Dto;
 using Terra.Net.Grpc.ServiceClients;
 
 namespace Terra.Net.Grpc
 {
     /*                        
                 
-                Cosmos.params.v1beta1.query
-                Cosmos.slashing.v1beta1.query
                 Cosmos.slashing.v1beta1.tx
-                Cosmos.tx.v1beta1.service
+         
                 Cosmos.upgrade.v1beta1.query
                 ibc.applications.transfer.v1.tx
                 ibc.core.channel.v1.query
@@ -26,7 +27,7 @@ namespace Terra.Net.Grpc
                 terra.market.v1beta1.tx
                 terra.oracle.v1beta1.query
                 terra.oracle.v1beta1.tx
-                terra.treasury.v1beta1.query
+
                 */
     public partial class TerraGrpcClient
     {
@@ -47,7 +48,11 @@ namespace Terra.Net.Grpc
             GovMsg = new(terraGrpcClientOptions);
             GovQuery = new(terraGrpcClientOptions);
             MintQuery = new(terraGrpcClientOptions);
-            ParamsQuery = new(terraGrpcClientOptions);            
+            ParamsQuery = new(terraGrpcClientOptions);
+            TreasuryQuery = new(terraGrpcClientOptions);
+            SlashingQuery = new(terraGrpcClientOptions);
+            UpgradeQuery = new(terraGrpcClientOptions);
+            WasmQuery = new(terraGrpcClientOptions);
         }
         public TerraGrpcClient(GrpcChannel channel)
         {
@@ -67,6 +72,10 @@ namespace Terra.Net.Grpc
             GovQuery = new(channel);
             MintQuery = new(channel);
             ParamsQuery = new(channel);
+            TreasuryQuery = new(channel);
+            SlashingQuery = new(channel);
+            UpgradeQuery = new(channel);
+            WasmQuery = new(channel);
         }
         public readonly BlocksQueryClient BlocksQuery;
         public readonly TxQueryClient Tx;
@@ -84,5 +93,21 @@ namespace Terra.Net.Grpc
         public readonly GovQueryClient GovQuery;
         public readonly MintQueryClient MintQuery;
         public readonly ParamsQueryClient ParamsQuery;
+        public readonly SlashingQueryClient SlashingQuery;
+        public readonly UpgradeQueryClient UpgradeQuery;
+        public readonly TreasuryQueryClient TreasuryQuery;
+        public readonly WasmTxQueryClient WasmQuery;
+
+        public async Task<TerraSwapPoolInfo> GetPoolInfo(string poolContractAddress)
+        {
+            var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = poolContractAddress, QueryMsg = ByteString.CopyFromUtf8("{\"pool\":{}}") });
+            return JsonConvert.DeserializeObject<TerraSwapPoolInfo>(query.QueryResult.ToStringUtf8());
+        }
+        public async Task<SwapSimulationResult> SimulateSwap(string poolContractAddress, ulong amount,  string target, bool fromDenom)
+        {
+            var q = JsonConvert.SerializeObject(fromDenom ? TerraSwapSimulation.FromNativeToken(target, amount*1000_000) : TerraSwapSimulation.FromToken(target, amount*1000_000));
+            var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = poolContractAddress, QueryMsg = ByteString.CopyFromUtf8(q) });
+            return JsonConvert.DeserializeObject<SwapSimulationResult>(query.QueryResult.ToStringUtf8());
+        }
     }
 }
