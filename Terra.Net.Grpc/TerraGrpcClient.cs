@@ -103,9 +103,14 @@ namespace Terra.Net.Grpc
             var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = poolContractAddress, QueryMsg = ByteString.CopyFromUtf8("{\"pool\":{}}") });
             return JsonConvert.DeserializeObject<TerraSwapPoolInfo>(query.QueryResult.ToStringUtf8());
         }
+        public async Task<TerraTokenBalance> GetTokenBalance(string tokenContractAddress, string addres)
+        {
+            var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = tokenContractAddress, QueryMsg = ByteString.CopyFromUtf8($"{{\"balance\":{{\"address\":\"{addres}\"}}}}") });
+            return JsonConvert.DeserializeObject<TerraTokenBalance>(query.QueryResult.ToStringUtf8());
+        }
         public async Task<SwapSimulationResult> SimulateSwap(string poolContractAddress, ulong amount,  string target, bool fromDenom)
         {
-            var q = JsonConvert.SerializeObject(fromDenom ? TerraSwapSimulation.FromNativeToken(target, amount*1000_000) : TerraSwapSimulation.FromToken(target, amount*1000_000));
+            var q = JsonConvert.SerializeObject(fromDenom ? TerraSwapSimulation.FromNativeToken(target, amount) : TerraSwapSimulation.FromToken(target, amount));
             var query = await WasmQuery.ContractStoreAsync(new Wasm.V1Beta1.QueryContractStoreRequest() { ContractAddress = poolContractAddress, QueryMsg = ByteString.CopyFromUtf8(q) });
             return JsonConvert.DeserializeObject<SwapSimulationResult>(query.QueryResult.ToStringUtf8());
         }
